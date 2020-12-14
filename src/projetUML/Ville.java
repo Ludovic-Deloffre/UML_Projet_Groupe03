@@ -1,15 +1,17 @@
 package projetUML;
 
+import java.util.ArrayList;
+
 public class Ville {
-    Case[][] carte;
+    ArrayList<ArrayList<Case> > carte = new ArrayList<ArrayList<Case>>();
 
     public Ville (int taille1,int taille2){
-        this.carte = new Case[taille1][taille2];
         for(int i=0 ; i<=taille1 ; i++){
+            ArrayList<Case> a1 = new ArrayList<Case>(taille2);
             for(int u=0 ; u<=taille2 ; u++){
-                carte[i][u]=null;
+                a1.add(null);
             }
+            carte.add(a1);
         }
-
     }
 }
