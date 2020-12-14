@@ -1,6 +1,6 @@
 package projetUML;
 
-public class Batiment {
+public class Batiment extends Case{
 
     int affectVie;
     int affectMoral;
@@ -8,8 +8,9 @@ public class Batiment {
     int affectHydratation;
     float bonusDiplome;
 
-    public Batiment()
+    public Batiment(int a, int b)
     {
+        super(a, b);
         this.affectVie = 0;
         this.affectMoral = 0;
         this.affectSatiete = 0;
@@ -17,5 +18,4 @@ public class Batiment {
         this.bonusDiplome = 0;
 
     }
-
 }

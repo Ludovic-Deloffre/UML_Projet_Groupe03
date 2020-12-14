@@ -8,4 +8,11 @@ public class Case {
         this.n=a;
         this.m=b;
     }
+
+    public void addtoVille(Ville ville)
+    {
+
+        ville.carte.get(m).add(n, this);
+
+    }
 }
