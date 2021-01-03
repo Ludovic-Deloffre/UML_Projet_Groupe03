@@ -1,6 +1,6 @@
 package projetUML;
 
-public class Main {
+public class Jeu {
 
     public static void main(String[] args){
 

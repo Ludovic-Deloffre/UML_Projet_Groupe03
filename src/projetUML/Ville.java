@@ -66,13 +66,42 @@ public class Ville {
                     throw new IllegalStateException("Unexpected value: " + i);
             }
             carte[coordY][(5 + coordX*i)] = test;
-            carte[coordY][(5 + coordX*i) + 1] = new Environnement(Type.Trottoir);
-            carte[coordY][(5 + coordX*i) - 1] = new Environnement(Type.Trottoir);
 
-            for(int j = -1; j < 2; j++){
-                carte[coordY+1][(5 + coordX*i) + j] = new Environnement(Type.Trottoir);
-                carte[coordY-1][(5 + coordX*i) + j] = new Environnement(Type.Trottoir);
+            if((test instanceof Environnement) != true)
+            {
+                carte[coordY][(5 + coordX*i) + 1] = new Environnement(Type.Trottoir);
+                carte[coordY][(5 + coordX*i) - 1] = new Environnement(Type.Trottoir);
+
+                for(int j = -1; j < 2; j++){
+                    carte[coordY+1][(5 + coordX*i) + j] = new Environnement(Type.Trottoir);
+                    carte[coordY-1][(5 + coordX*i) + j] = new Environnement(Type.Trottoir);
+                }
             }
+
+            else
+            {
+                if(h == 5){
+                    carte[coordY][(5 + coordX*i) + 1] = new Environnement(Type.Foret);
+                    carte[coordY][(5 + coordX*i) - 1] = new Environnement(Type.Foret);
+
+                    for(int j = -1; j < 2; j++){
+                        carte[coordY+1][(5 + coordX*i) + j] = new Environnement(Type.Foret);
+                        carte[coordY-1][(5 + coordX*i) + j] = new Environnement(Type.Foret);
+                    }
+                }
+                else
+                {
+                    carte[coordY][(5 + coordX*i) + 1] = new Environnement(Type.Eau);
+                    carte[coordY][(5 + coordX*i) - 1] = new Environnement(Type.Eau);
+
+                    for(int j = -1; j < 2; j++){
+                        carte[coordY+1][(5 + coordX*i) + j] = new Environnement(Type.Eau);
+                        carte[coordY-1][(5 + coordX*i) + j] = new Environnement(Type.Eau);
+                    }
+                }
+            }
+
+
 
         }
 
