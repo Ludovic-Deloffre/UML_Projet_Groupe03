@@ -23,7 +23,11 @@ public abstract class Personnage {
 
     public void updateStats(Case c){
         if(c instanceof Batiment){
-
+            int affectVie = c.affectVie;
+            int affectMoral = c.affectMoral;
+            int affectSatiete = c.affectSatiete;
+            int affectHydratation = c.affectHydratation;
+            float bonusDiplome = c.bonusDiplome;
         }
         if(deathChance != 0 || hydratation != 0 || satiete != 0 || moral != 0 || vie != 0){
 

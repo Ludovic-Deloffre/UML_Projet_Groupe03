@@ -2,11 +2,11 @@ package projetUML;
 
 public class Batiment extends Case{
 
-    int affectVie;
-    int affectMoral;
-    int affectSatiete;
-    int affectHydratation;
-    float bonusDiplome;
+    public int affectVie;
+    public int affectMoral;
+    public int affectSatiete;
+    public int affectHydratation;
+    public float bonusDiplome;
 
     public Batiment(int a, int b)
     {
