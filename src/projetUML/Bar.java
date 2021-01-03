@@ -2,9 +2,10 @@ package projetUML;
 
 public class Bar extends Batiment{
 
-    public Bar(int a, int b)
+    public Bar()
     {
-        super(a,b);
+        super();
+        this.rep = 'P';
         this.affectMoral = 10;
         this.affectVie = -3;
         this.affectHydratation = 25;

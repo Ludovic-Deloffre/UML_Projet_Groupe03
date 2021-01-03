@@ -4,12 +4,11 @@ public class Main {
 
     public static void main(String[] args){
 
-        Ville test = new Ville(32,32);
-        Maison maison = new Maison(5,5);
+        Ville test = new Ville(50,13);
+        test.generate();
+        test.affiche();
 
-        maison.addtoVille(test);
 
-        System.out.println((test.carte.get(5).get(5)).n);
 
     }
 

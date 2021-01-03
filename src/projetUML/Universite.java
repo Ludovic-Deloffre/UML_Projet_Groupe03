@@ -2,8 +2,9 @@ package projetUML;
 
 public class Universite extends Batiment{
 
-    public Universite(int a, int b)
+    public Universite()
     {
-        super(a,b);
+        super();
+        this.rep = 'U';
     }
 }

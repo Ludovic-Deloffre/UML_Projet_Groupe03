@@ -2,9 +2,10 @@ package projetUML;
 
 public class FastFood extends Batiment{
 
-    public FastFood(int a, int b)
+    public FastFood()
     {
-        super(a,b);
+        super();
+        this.rep = 'F';
         this.affectMoral = 10;
         this.affectSatiete = 25;
         this.affectHydratation = 10;

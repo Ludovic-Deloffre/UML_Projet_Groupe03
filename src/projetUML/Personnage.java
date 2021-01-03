@@ -22,14 +22,24 @@ public abstract class Personnage {
     }
 
     public void updateStats(Case c){
+        int affectVie = 0;
+        int affectMoral = 0;
+        int affectSatiete= 0;
+        int affectHydratation = 0;
+        float bonusDiplome = 0;
+
         if(c instanceof Batiment){
-            int affectVie = c.affectVie;
-            int affectMoral = c.affectMoral;
-            int affectSatiete = c.affectSatiete;
-            int affectHydratation = c.affectHydratation;
-            float bonusDiplome = c.bonusDiplome;
+            affectVie = ((Batiment) c).affectVie;
+            affectMoral = ((Batiment) c).affectMoral;
+            affectSatiete = ((Batiment) c).affectSatiete;
+            affectHydratation = ((Batiment) c).affectHydratation;
+            bonusDiplome = ((Batiment) c).bonusDiplome;
+
+
+
         }
-        if(deathChance != 0 || hydratation != 0 || satiete != 0 || moral != 0 || vie != 0){
+
+        if(hydratation > 0 && satiete > 0 && moral > 0 && vie > 0){
 
             if((this.vie += affectVie) > 100){this.vie = 100;}
             else{this.vie += affectVie;}
