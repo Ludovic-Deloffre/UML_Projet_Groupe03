@@ -70,43 +70,12 @@ public class Ville {
                     carte[coordY+1][(5 + coordX*i) + j] = new Environnement(Type.Trottoir);
                     carte[coordY-1][(5 + coordX*i) + j] = new Environnement(Type.Trottoir);
                 }
+        for(int i=0 ; i<=taille1 ; i++){
+            List<Case> a1 = new ArrayList<Case>(taille2);
+            for(int u=0 ; u<=taille2 ; u++){
+                a1.add(null);
             }
-
-            else
-            {
-                if(h == 5){
-                    carte[coordY][(5 + coordX*i) + 1] = new Environnement(Type.Foret);
-                    carte[coordY][(5 + coordX*i) - 1] = new Environnement(Type.Foret);
-
-                    for(int j = -1; j < 2; j++){
-                        carte[coordY+1][(5 + coordX*i) + j] = new Environnement(Type.Foret);
-                        carte[coordY-1][(5 + coordX*i) + j] = new Environnement(Type.Foret);
-                    }
-                }
-                else
-                {
-                    carte[coordY][(5 + coordX*i) + 1] = new Environnement(Type.Eau);
-                    carte[coordY][(5 + coordX*i) - 1] = new Environnement(Type.Eau);
-
-                    for(int j = -1; j < 2; j++){
-                        carte[coordY+1][(5 + coordX*i) + j] = new Environnement(Type.Eau);
-                        carte[coordY-1][(5 + coordX*i) + j] = new Environnement(Type.Eau);
-                    }
-                }
-            }
-
-
-
-        }
-
-    }
-
-    public void affiche(){
-        for(int i = 0; i < y; i++){
-            for(int j = 0; j < x; j++){
-                System.out.print(carte[i][j].rep);
-            }
-            System.out.print('\n');
+            carte.add(a1);
         }
     }
 }
