@@ -23,7 +23,7 @@ public class Environnement extends Case{
                 break;
 
             case Foret:
-                this.rep = '△';
+                this.rep = 'G';
                 typeEnvironnement=Type.Foret;
                 break;
 
