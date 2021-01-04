@@ -16,11 +16,12 @@ public abstract class Personnage {
     // 1 = normal (a pied sur les trottoirs + en voiture sur les routes)
     // 2 = velo (sur toutes les cases)
 
-    public Personnage(String pseudo, boolean maillot){
+    public Personnage(String pseudo, boolean maillot, int moyenTransport){
         this.pseudo = pseudo;
         this.maillot = maillot;
         this.diplome = 0;
         this.bonusDiplome = 0;
+        this.moyenTransport = moyenTransport;
     }
 
     public int getPersonnage(Case b){
