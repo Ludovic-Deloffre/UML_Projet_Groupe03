@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.Random;
 public class Ville {
     Case[][] carte;
+    int spawnX;
+    int spawnY;
     int x;
     int y;
     public Ville (int taille1,int taille2){
@@ -43,6 +45,8 @@ public class Ville {
             switch(h){
                 case 0:
                     test = new Maison();
+                    int spawnX = 5 + coordX*i;
+                    int spawnY = coordY;
                     break;
                 case 1:
                     test = new Bar();
@@ -105,6 +109,18 @@ public class Ville {
 
         }
 
+    }
+
+    public Case getCase(int x, int y){
+        return(carte[y][x]);
+    }
+
+    public int getSpawnX(){
+        return this.spawnX;
+    }
+
+    public int getSpawnY(){
+        return this.spawnY;
     }
 
     public void affiche(){
