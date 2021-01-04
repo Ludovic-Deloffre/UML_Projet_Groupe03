@@ -8,9 +8,9 @@ public class Batiment extends Case{
     public int affectHydratation;
     public float bonusDiplome;
 
-    public Batiment(int a, int b)
+    public Batiment()
     {
-        super(a, b);
+        super();
         this.affectVie = 0;
         this.affectMoral = 0;
         this.affectSatiete = 0;

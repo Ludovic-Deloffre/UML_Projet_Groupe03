@@ -2,9 +2,10 @@ package projetUML;
 
 public class Bibliotheque extends Batiment{
 
-    public Bibliotheque(int a, int b)
+    public Bibliotheque()
     {
-        super(a,b);
+        super();
+        this.rep = 'B';
         this.affectMoral = 20;
         this.bonusDiplome = (float) 0.1;
 
