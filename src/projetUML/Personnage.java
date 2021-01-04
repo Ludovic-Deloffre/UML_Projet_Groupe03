@@ -100,9 +100,29 @@ public abstract class Personnage {
                     this.hydratation -= 5;
                     this.satiete -= 5;
                 }
+                if(((Environnement) c).malus.equals(TypeM.FeuRouge)){
+                    this.vie -= 1;
+                }
+                else if(((Environnement) c).malus.equals(TypeM.Police)){
+                    this.moral -= 1;
+                }
+                else if(((Environnement) c).malus.equals(TypeM.NidDePoule)){
+                    this.satiete -= 2;
+                    this.hydratation -= 2;
+                }
+
 
             } else if (((Environnement) c).typeEnvironnement == Type.Trottoir) {
                 moyenTransport();
+                if(((Environnement) c).malus.equals(TypeM.PeauDeBanane)){
+                    this.vie -= 3;
+                }
+                else if(((Environnement) c).malus.equals(TypeM.Poussette)){
+                    this.moral -= 2;
+                }
+                else if(((Environnement) c).malus.equals(TypeM.DéjectionCanine)){
+                    this.satiete -= 1;
+                }
             } else if (((Environnement) c).typeEnvironnement == Type.Foret) {
                 moyenTransport();
                 nombreAleatoire = 0 + (int)(Math.random() * ((101 - 0) + 1));
