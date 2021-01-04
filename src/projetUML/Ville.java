@@ -45,8 +45,8 @@ public class Ville {
             switch(h){
                 case 0:
                     test = new Maison();
-                    int spawnX = 5 + coordX*i;
-                    int spawnY = coordY;
+                    this.spawnX = 5 + coordX*i;
+                    this.spawnY = coordY;
                     break;
                 case 1:
                     test = new Bar();

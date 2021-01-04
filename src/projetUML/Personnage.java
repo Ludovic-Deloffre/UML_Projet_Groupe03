@@ -113,6 +113,11 @@ public abstract class Personnage {
 
     }
 
+    public void afficheStats(){
+        System.out.println("Vie : "+this.vie+" | Satiété : "+ this.satiete + " | Hydratation : "+this.hydratation);
+        System.out.println("Moral : "+this.moral+" | Diplômes : "+ this.diplome + " | Arrestations : "+this.arrestation);
+    }
+
 
 
     // calcul des statistiques pour les deplacements à pied et à vélo
