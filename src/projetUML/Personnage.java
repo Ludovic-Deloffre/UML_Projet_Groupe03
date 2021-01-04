@@ -100,13 +100,13 @@ public abstract class Personnage {
                     this.hydratation -= 5;
                     this.satiete -= 5;
                 }
-                if(((Environnement) c).malus.equals(TypeM.FeuRouge)){
+                if(((Environnement) c).malus.typeMalus.equals(TypeM.FeuRouge)){
                     this.vie -= 1;
                 }
-                else if(((Environnement) c).malus.equals(TypeM.Police)){
+                else if(((Environnement) c).malus.typeMalus.equals(TypeM.Police)){
                     this.moral -= 1;
                 }
-                else if(((Environnement) c).malus.equals(TypeM.NidDePoule)){
+                else if(((Environnement) c).malus.typeMalus.equals(TypeM.NidDePoule)){
                     this.satiete -= 2;
                     this.hydratation -= 2;
                 }
@@ -114,13 +114,13 @@ public abstract class Personnage {
 
             } else if (((Environnement) c).typeEnvironnement == Type.Trottoir) {
                 moyenTransport();
-                if(((Environnement) c).malus.equals(TypeM.PeauDeBanane)){
+                if(((Environnement) c).malus.typeMalus.equals(TypeM.PeauDeBanane)){
                     this.vie -= 3;
                 }
-                else if(((Environnement) c).malus.equals(TypeM.Poussette)){
+                else if(((Environnement) c).malus.typeMalus.equals(TypeM.Poussette)){
                     this.moral -= 2;
                 }
-                else if(((Environnement) c).malus.equals(TypeM.DéjectionCanine)){
+                else if(((Environnement) c).malus.typeMalus.equals(TypeM.DejectionCanine)){
                     this.satiete -= 1;
                 }
             } else if (((Environnement) c).typeEnvironnement == Type.Foret) {

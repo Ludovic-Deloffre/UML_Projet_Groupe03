@@ -12,9 +12,9 @@ public class Environnement extends Case{
             case Route:
                 this.rep = '_';
                 typeEnvironnement=Type.Route;
-                ajoutPiege = 0 + (int) (Math.random() * ((101 - 0) + 1));
+                ajoutPiege = (int) (Math.random() * ((101 - 0) + 1));
                 if(ajoutPiege  < 5){
-                    typePiege= 0 + (int) (Math.random() * ((2 - 0) + 1));
+                    typePiege= (int) (Math.random() * ((4 - 1) + 1));
                     switch (typePiege){
                         case 1:
                             this.malus = new Malus(TypeM.FeuRouge);
@@ -35,9 +35,9 @@ public class Environnement extends Case{
             case Trottoir:
                 this.rep = '#';
                 typeEnvironnement=Type.Trottoir;
-                ajoutPiege = 0 + (int) (Math.random() * ((101 - 0) + 1));
+                ajoutPiege = (int) (Math.random() * ((101 - 0) + 1));
                 if(ajoutPiege  < 5){
-                    typePiege= 0 + (int) (Math.random() * ((2 - 0) + 1));
+                    typePiege= (int) (Math.random() * ((4 - 1) + 1));
                     switch (typePiege){
                         case 1:
                             this.malus = new Malus(TypeM.PeauDeBanane);
@@ -46,7 +46,7 @@ public class Environnement extends Case{
                             this.malus = new Malus(TypeM.Poussette);
                             break;
                         case 3:
-                            this.malus = new Malus(TypeM.DéjectionCanine);
+                            this.malus = new Malus(TypeM.DejectionCanine);
                             break;
                     }
                 }

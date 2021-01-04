@@ -145,6 +145,7 @@ public class Game {
         Scanner input = new Scanner(System.in);
         char bufferChar;
         char persoChar = '¡';
+        int gameOver = 1;
 
         String direction;
         Case currentCase;
@@ -168,22 +169,54 @@ public class Game {
         jeu.city.affiche();
         jeu.perso.afficheStats();
 
-        while(true){
+        while(gameOver == 1){
             System.out.println("");
             direction = input.nextLine();
             jeu.updateCoord(direction);
 
             bufferChar = jeu.updateChar(bufferChar, curX, curY);
-
+            currentCase = jeu.city.getCase(jeu.coordX, jeu.coordY);
             curX = jeu.coordX;
             curY = jeu.coordY;
 
+            gameOver = jeu.perso.getPersonnage(currentCase);
+
             jeu.city.affiche();
             jeu.perso.afficheStats();
-
-
         }
-
+        System.out.print(
+                "             uu$$$$$$$$$$$uu\n" +
+                "          uu$$$$$$$$$$$$$$$$$uu\n" +
+                "         u$$$$$$$$$$$$$$$$$$$$$u\n" +
+                "        u$$$$$$$$$$$$$$$$$$$$$$$u\n" +
+                "       u$$$$$$$$$$$$$$$$$$$$$$$$$u\n" +
+                "       u$$$$$$$$$$$$$$$$$$$$$$$$$u\n" +
+                "       u$$$$$$\"   \"$$$\"   \"$$$$$$u\n" +
+                "       \"$$$$\"      u$u       $$$$\"\n" +
+                "        $$$u       u$u       u$$$\n" +
+                "        $$$u      u$$$u      u$$$\n" +
+                "         \"$$$$uu$$$   $$$uu$$$$\"\n" +
+                "          \"$$$$$$$\"   \"$$$$$$$\"\n" +
+                "            u$$$$$$$u$$$$$$$u\n" +
+                "             u$\"$\"$\"$\"$\"$\"$u\n" +
+                "  uuu        $$u$ $ $ $ $u$$       uuu\n" +
+                " u$$$$        $$$$$u$u$u$$$       u$$$$\n" +
+                "  $$$$$uu      \"$$$$$$$$$\"     uu$$$$$$\n" +
+                "u$$$$$$$$$$$uu    \"\"\"\"\"    uuuu$$$$$$$$$$\n" +
+                "$$$$\"\"\"$$$$$$$$$$uuu   uu$$$$$$$$$\"\"\"$$$\"\n" +
+                " \"\"\"      \"\"$$$$$$$$$$$uu \"\"$\"\"\"\n" +
+                "           uuuu \"\"$$$$$$$$$$uuu\n" +
+                "  u$$$uuu$$$$$$$$$uu \"\"$$$$$$$$$$$uuu$$$\n" +
+                "  $$$$$$$$$$\"\"\"\"           \"\"$$$$$$$$$$$\"\n" +
+                "   \"$$$$$\"                      \"\"$$$$\"\"\n");
+        System.out.print("         88                               88           \n" +
+                "         88                         ,d    88           \n" +
+                "         88                         88    88           \n" +
+                " ,adPPYb,88  ,adPPYba, ,adPPYYba, MM88MMM 88,dPPYba,   \n" +
+                "a8\"    `Y88 a8P_____88 \"\"     `Y8   88    88P'    \"8a  \n" +
+                "8b       88 8PP\"\"\"\"\"\"\" ,adPPPPP88   88    88       88  \n" +
+                "\"8a,   ,d88 \"8b,   ,aa 88,    ,88   88,   88       88  \n" +
+                " `\"8bbdP\"Y8  `\"Ybbd8\"' `\"8bbdP\"Y8   \"Y888 88       88  ");
 
 
 
