@@ -1,6 +1,9 @@
 package projetUML;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Ville {
     ArrayList<ArrayList<Case> > carte = new ArrayList<ArrayList<Case>>();

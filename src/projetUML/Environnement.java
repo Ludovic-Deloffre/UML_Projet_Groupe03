@@ -74,6 +74,11 @@ public class Environnement extends Case{
                 break;
         }
     }
+    public void test(){
+        if(malus.equals(TypeM.Aucun)){
+
+        }
+    }
 }
 
 
