@@ -7,7 +7,11 @@ public class Bibliotheque extends Batiment{
         super();
         this.rep = 'B';
         this.affectMoral = 20;
-        this.bonusDiplome = (float) 0.1;
+        int bookGenieLogicielFound = 0 + (int) (Math.random() * ((101 - 0) + 1));
+        if (bookGenieLogicielFound < 5) {
+            this.bonusDiplome = (float) 0.1;
+        }
+
 
     }
 

@@ -34,7 +34,7 @@ public abstract class Personnage {
     }
 
     public int verifyStats(){
-        if(deathChance == 1 || arrestation >= 3 || hydratation == 0 || satiete == 0 || moral == 0 || vie == 0){
+        if(deathChance == 1 || arrestation >= 3 || hydratation <= 0 || satiete <= 0 || moral <= 0 || vie <= 0){
             return 0;
         }
         return 1;
@@ -68,8 +68,24 @@ public abstract class Personnage {
             if((this.moral += affectMoral) > 100){this.moral = 100;}
             else{this.moral += affectMoral;}
 
-            this.bonusDiplome += bonusDiplome;
-            this.diplome += diplome;
+            if(bonusDiplome == 0.1){
+                nombreAleatoire = 0 + (int) (Math.random() * ((101 - 0) + 1));
+                if (nombreAleatoire < 10) {
+                    this.diplome += 1;
+                }
+            } else if(bonusDiplome == 0.3){
+                nombreAleatoire = 0 + (int) (Math.random() * ((101 - 0) + 1));
+                if (nombreAleatoire < 30) {
+                    this.diplome += 1;
+                    this.moral += 5;
+                }
+            }
+            else if(bonusDiplome == 0.05){
+                nombreAleatoire = 0 + (int) (Math.random() * ((101 - 0) + 1));
+                if (nombreAleatoire < 5) {
+                    this.diplome += 1;
+                }
+            }
 
             // A chaque action, il a 5 % de chance de tomber malade : -10 pts vie.
             // 0 inclus
