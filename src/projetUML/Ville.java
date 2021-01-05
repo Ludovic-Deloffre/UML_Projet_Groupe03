@@ -3,18 +3,21 @@ package projetUML;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
-
+import java.util.Random;
 public class Ville {
-    ArrayList<ArrayList<Case> > carte = new ArrayList<ArrayList<Case>>();
-
+    Case[][] carte;
+    int x;
+    int y;
     public Ville (int taille1,int taille2){
-        for(int i=0 ; i<=taille1 ; i++){
-            ArrayList<Case> a1 = new ArrayList<Case>(taille2);
-            for(int u=0 ; u<=taille2 ; u++){
-                a1.add(null);
+        this.x = taille1;
+        this.y = taille2;
+        this.carte = new Case[taille2][taille1];
+        for(int i=0 ; i<taille2 ; i++){
+            Case[] a1 = new Case[taille1];
+            for(int u=0 ; u<taille1 ; u++){
+                a1[u] = null;
             }
-            carte.add(a1);
+            carte[i]=a1;
         }
     }
 
@@ -73,12 +76,43 @@ public class Ville {
                     carte[coordY+1][(5 + coordX*i) + j] = new Environnement(Type.Trottoir);
                     carte[coordY-1][(5 + coordX*i) + j] = new Environnement(Type.Trottoir);
                 }
-        for(int i=0 ; i<=taille1 ; i++){
-            List<Case> a1 = new ArrayList<Case>(taille2);
-            for(int u=0 ; u<=taille2 ; u++){
-                a1.add(null);
             }
-            carte.add(a1);
+
+            else
+            {
+                if(h == 5){
+                    carte[coordY][(5 + coordX*i) + 1] = new Environnement(Type.Foret);
+                    carte[coordY][(5 + coordX*i) - 1] = new Environnement(Type.Foret);
+
+                    for(int j = -1; j < 2; j++){
+                        carte[coordY+1][(5 + coordX*i) + j] = new Environnement(Type.Foret);
+                        carte[coordY-1][(5 + coordX*i) + j] = new Environnement(Type.Foret);
+                    }
+                }
+                else
+                {
+                    carte[coordY][(5 + coordX*i) + 1] = new Environnement(Type.Eau);
+                    carte[coordY][(5 + coordX*i) - 1] = new Environnement(Type.Eau);
+
+                    for(int j = -1; j < 2; j++){
+                        carte[coordY+1][(5 + coordX*i) + j] = new Environnement(Type.Eau);
+                        carte[coordY-1][(5 + coordX*i) + j] = new Environnement(Type.Eau);
+                    }
+                }
+            }
+
+
+
+        }
+
+    }
+
+    public void affiche(){
+        for(int i = 0; i < y; i++){
+            for(int j = 0; j < x; j++){
+                System.out.print(carte[i][j].rep);
+            }
+            System.out.print('\n');
         }
     }
 }
