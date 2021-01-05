@@ -1,8 +1,9 @@
 package projetUML;
 
 public class Malus {
+    TypeM typeMalus;
     public Malus(TypeM a){
-        TypeM typeMalus;
+
         switch (a){
             case FeuRouge:
                 typeMalus=TypeM.FeuRouge;
@@ -24,8 +25,8 @@ public class Malus {
                 typeMalus=TypeM.Poussette;
                 break;
 
-            case DéjectionCanine:
-                typeMalus=TypeM.DéjectionCanine;
+            case DejectionCanine:
+                typeMalus=TypeM.DejectionCanine;
                 break;
 
             case Aucun:
@@ -43,6 +44,6 @@ enum TypeM{
     PeauDeBanane,
     Poussette,
     Aucun,
-    DéjectionCanine;
+    DejectionCanine;
 
     }
