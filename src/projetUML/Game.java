@@ -104,28 +104,31 @@ public class Game {
     }
 
     public void updateCoord(String d){
-        switch(d){
-            case "z":
-                if(this.coordY > 0) {
-                    this.coordY -= 1;
-                }
-                break;
-            case "q":
-                if(this.coordX > 0) {
-                    this.coordX -= 1;
-                }
-                break;
-            case "s":
-                if(this.coordY < city.y-1){
-                    this.coordY += 1;
-                }
 
-                break;
-            case "d":
-                if(this.coordX < city.x-1){
-                    this.coordX += 1;
-                }
-                break;        }
+            switch (d) {
+                case "z":
+                    if (this.coordY > 0) {
+                        this.coordY -= 1;
+                    }
+                    break;
+                case "q":
+                    if (this.coordX > 0) {
+                        this.coordX -= 1;
+                    }
+                    break;
+                case "s":
+                    if (this.coordY < city.y - 1) {
+                        this.coordY += 1;
+                    }
+
+                    break;
+                case "d":
+                    if (this.coordX < city.x - 1) {
+                        this.coordX += 1;
+                    }
+                    break;
+            }
+
     }
 
     public char updateChar(char buffer, int bufferX, int bufferY){
@@ -170,9 +173,17 @@ public class Game {
         jeu.perso.afficheStats();
 
         while(gameOver == 1){
+            boolean test=true;
             System.out.println("");
             direction = input.nextLine();
-            jeu.updateCoord(direction);
+            if((currentCase instanceof Environnement) == true){
+                if ((jeu.perso.maillot == false) && (((Environnement) currentCase).typeEnvironnement == Type.Eau)) {
+                    test = false;
+                }
+            }
+            if(test) {
+                jeu.updateCoord(direction);
+            }
 
             bufferChar = jeu.updateChar(bufferChar, curX, curY);
             currentCase = jeu.city.getCase(jeu.coordX, jeu.coordY);
@@ -181,8 +192,10 @@ public class Game {
 
             gameOver = jeu.perso.getPersonnage(currentCase);
 
+
             jeu.city.affiche();
             jeu.perso.afficheStats();
+
         }
         System.out.print(
                 "             uu$$$$$$$$$$$uu\n" +
