@@ -6,7 +6,7 @@ public class Batiment extends Case{
     public int affectMoral;
     public int affectSatiete;
     public int affectHydratation;
-    public float bonusDiplome;
+    public int bonusDiplome;
 
     public Batiment()
     {

@@ -46,7 +46,7 @@ public abstract class Personnage {
         int affectMoral = 0;
         int affectSatiete = 0;
         int affectHydratation = 0;
-        float bonusDiplome = 0;
+        int bonusDiplome = 0;
         int nombreAleatoire = 0;
 
         if(c instanceof Batiment){
@@ -68,19 +68,19 @@ public abstract class Personnage {
             if((this.moral += affectMoral) > 100){this.moral = 100;}
             else{this.moral += affectMoral;}
 
-            if(bonusDiplome == 0.1){
+            if(bonusDiplome == 2){
                 nombreAleatoire = 0 + (int) (Math.random() * ((101 - 0) + 1));
                 if (nombreAleatoire < 10) {
                     this.diplome += 1;
                 }
-            } else if(bonusDiplome == 0.3){
+            } else if(bonusDiplome == 1){
                 nombreAleatoire = 0 + (int) (Math.random() * ((101 - 0) + 1));
                 if (nombreAleatoire < 30) {
                     this.diplome += 1;
                     this.moral += 5;
                 }
             }
-            else if(bonusDiplome == 0.05){
+            else if(bonusDiplome == 3){
                 nombreAleatoire = 0 + (int) (Math.random() * ((101 - 0) + 1));
                 if (nombreAleatoire < 5) {
                     this.diplome += 1;

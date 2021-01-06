@@ -9,7 +9,7 @@ public class Bibliotheque extends Batiment{
         this.affectMoral = 20;
         int bookGenieLogicielFound = 0 + (int) (Math.random() * ((101 - 0) + 1));
         if (bookGenieLogicielFound < 5) {
-            this.bonusDiplome = (float) 0.1;
+            this.bonusDiplome = 2;
         }
 
 

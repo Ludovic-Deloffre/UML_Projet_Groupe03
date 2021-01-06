@@ -11,7 +11,7 @@ public class Bar extends Batiment{
         this.affectHydratation = 25;
         int sujetExamenFound = 0 + (int) (Math.random() * ((101 - 0) + 1));
         if (sujetExamenFound < 5) {
-            this.bonusDiplome = (float) 0.05;
+            this.bonusDiplome = 3;
         }
 
     }
