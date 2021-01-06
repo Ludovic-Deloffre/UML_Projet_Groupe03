@@ -7,15 +7,15 @@ Nous avons développé un petit jeu-vidéo pour mettre en oeuvre les techniques 
 
 Sur la carte votre personnage est matérialisé par le caractère "¡", on se déplace en écrivant une des directions (z: haut, q: gauche, s: bas, d: droite) et en validant l'input.
 Chaque type de case est matérialisé par un caractère spécifique:
-	- Les routes 		: "_"
-	- Les trottoirs 	: "#"
-	- Les cases eau		: "~"
-	- Les cases Fôret 	: "G"
-	- La bibliothèque 	: "B"
-	- Le bar 			: "P"
-	- Le Fast-Food		: "F"
-	- La Maison			: "M"
-	- L'université 		: "U"
+- Les routes 		: "_"
+- Les trottoirs 	: "#"
+- Les cases eau		: "~"
+- Les cases Fôret 	: "G"
+- La bibliothèque 	: "B"
+- Le bar 		: "P"
+- Le Fast-Food		: "F"
+- La Maison		: "M"
+- L'université 		: "U"
 
 ### Pré-requis
 
