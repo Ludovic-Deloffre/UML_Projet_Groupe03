@@ -61,7 +61,7 @@ public class Game {
         }
 
         System.out.println("Entrez votre pseudo : ");
-        pseudo = input.nextLine();
+        pseudo = input.next();
 
         System.out.println("Choisissez votre personnage : ");
         System.out.println("1 - Standard");
