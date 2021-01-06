@@ -72,6 +72,7 @@ public class Environnement extends Case{
                 typeEnvironnement=Type.Grise;
                 this.malus = new Malus(TypeM.Aucun);
                 break;
+
         }
     }
 }

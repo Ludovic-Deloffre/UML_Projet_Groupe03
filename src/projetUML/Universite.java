@@ -6,5 +6,6 @@ public class Universite extends Batiment{
     {
         super();
         this.rep = 'U';
+        this.bonusDiplome = (float) 0.3;
     }
 }

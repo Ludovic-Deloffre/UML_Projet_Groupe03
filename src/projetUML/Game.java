@@ -139,6 +139,74 @@ public class Game {
 
     }
 
+    public int verifDeplacement(String direction)
+    {
+        switch(direction){
+            case "z":
+                if(this.coordY > 0) {
+                    if (city.carte[coordY - 1][coordX] instanceof Environnement) {
+                        if (((Environnement) city.carte[coordY - 1][coordX]).typeEnvironnement == Type.Eau) {
+                            if (perso.maillot == false) {
+                                return 0;
+                            }
+
+                        }
+                    }
+                    return 1;
+                }
+                break;
+
+            case "q":
+                if(this.coordX > 0)
+                {
+                    if (city.carte[coordY][coordX - 1] instanceof Environnement) {
+                        if (((Environnement) city.carte[coordY][coordX - 1]).typeEnvironnement == Type.Eau) {
+                            if (perso.maillot == false) {
+                                return 0;
+                            }
+                        }
+                    }
+                    return 1;
+                }
+                break;
+
+            case "s":
+                if(this.coordY < city.y-1)
+                {
+                    if (city.carte[coordY + 1][coordX] instanceof Environnement)
+                    {
+                        if (((Environnement) city.carte[coordY + 1][coordX]).typeEnvironnement == Type.Eau)
+                        {
+                            if (perso.maillot == false)
+                            {
+                                return 0;
+                            }
+                        }
+                    }
+                    return 1;
+                }
+                break;
+
+            case "d":
+                if(this.coordX < city.x-1){
+                    if (city.carte[coordY][coordX + 1] instanceof Environnement)
+                    {
+                        if (((Environnement) city.carte[coordY][coordX + 1]).typeEnvironnement == Type.Eau)
+                        {
+                            if (perso.maillot == false)
+                            {
+                                return 0;
+                            }
+
+                        }
+                    }
+                    return 1;
+                }
+                break;
+        }
+        return 0;
+    }
+
     public static void main(String[] args){
         int curX;
         int curY;
@@ -146,6 +214,7 @@ public class Game {
         char bufferChar;
         char persoChar = '¡';
         int gameOver = 1;
+        int verif;
 
         String direction;
         Case currentCase;
@@ -172,14 +241,18 @@ public class Game {
         while(gameOver == 1){
             System.out.println("");
             direction = input.nextLine();
-            jeu.updateCoord(direction);
+            if(jeu.verifDeplacement(direction) == 1)
+            {
+                jeu.updateCoord(direction);
+                bufferChar = jeu.updateChar(bufferChar, curX, curY);
+                currentCase = jeu.city.getCase(jeu.coordX, jeu.coordY);
+                curX = jeu.coordX;
+                curY = jeu.coordY;
 
-            bufferChar = jeu.updateChar(bufferChar, curX, curY);
-            currentCase = jeu.city.getCase(jeu.coordX, jeu.coordY);
-            curX = jeu.coordX;
-            curY = jeu.coordY;
+                gameOver = jeu.perso.getPersonnage(currentCase);
 
-            gameOver = jeu.perso.getPersonnage(currentCase);
+            }
+
 
             jeu.city.affiche();
             jeu.perso.afficheStats();
