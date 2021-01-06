@@ -17,14 +17,6 @@ Chaque type de case est matérialisé par un caractère spécifique:
 - La Maison		: "M"
 - L'université 		: "U"
 
-### Pré-requis
-
-Ce qu'il est requis pour commencer avec votre projet...
-
-- Programme 1
-- Programme 2
-- etc...
-
 ### Installation
 
 Il suffit de compiler le projet et d'éxecuter la méthode main de la classe Game.
