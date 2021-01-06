@@ -19,11 +19,11 @@ Chaque type de case est matérialisé par un caractère spécifique:
 
 ### Installation
 
-Il suffit de compiler le projet et d'éxecuter la méthode main de la classe Game.
+Il suffit de lancer le fichier UML_project.jar dans le dossier out/artifacts ou de compiler le projet et d'éxecuter la méthode main de la classe Game.
 
 ## Démarrage
 
-Une fois le projet construit et la méthode main éxecutée, une invite de commande va vous demander d'entrer certaines informations pour choisir les paramètres de votre personnage (Méthode de déplacement, pseudo, type de personnage...).
+Une fois le projet construit et la méthode main éxecutée ou une fois le Jar éxecuté, une invite de commande va vous demander d'entrer certaines informations pour choisir les paramètres de votre personnage (Méthode de déplacement, pseudo, type de personnage...).
 Une fois tous ces paramètres choisis, le jeu s'affiche.
 
 ## Fabriqué avec
