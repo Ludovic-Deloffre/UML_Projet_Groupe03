@@ -232,7 +232,6 @@ public class Game {
 
         currentCase = jeu.city.getCase(jeu.city.getSpawnX(), jeu.city.getSpawnY());
         bufferChar = jeu.city.getCase(jeu.city.getSpawnX(), jeu.city.getSpawnY()).rep;
-        System.out.println(bufferChar + " X : "+  jeu.city.getSpawnX() + " Y :"+jeu.city.getSpawnY());
         currentCase.rep = persoChar;
 
         jeu.city.affiche();
