@@ -253,7 +253,9 @@ public class Game {
 
             }
 
-
+            if(jeu.perso.verifyStats() == 0){
+                gameOver = 0;
+            }
             jeu.city.affiche();
             jeu.perso.afficheStats();
         }
